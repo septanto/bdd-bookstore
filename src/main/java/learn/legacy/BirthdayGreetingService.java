@@ -4,8 +4,12 @@ public class BirthdayGreetingService {
 
     private final MessageSender messageSender;
 
-    public BirthdayGreetingService() {
-        messageSender = new EmailMessageSender();
+    public BirthdayGreetingService(final MessageSender messageSender) {
+        this.messageSender = messageSender;
+    }
+
+    protected MessageSender getMessageSender() {
+        return new EmailMessageSender();
     }
 
     public void greet(final Employee employee) {

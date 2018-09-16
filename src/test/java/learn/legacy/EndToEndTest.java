@@ -17,7 +17,7 @@ public class EndToEndTest {
         final StringBuilder systemOutput = injectSystemOutput();
         final Employee john = new Employee(new Email("john@example.com"));
 
-        new BirthdayGreetingService().greet(john);
+        new BirthdayGreetingService(new EmailMessageSender()).greet(john);
 
         assertThat(systemOutput.toString(), equalTo("Sent email to '"
                 + "john@example.com"
