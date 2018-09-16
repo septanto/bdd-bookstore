@@ -8,7 +8,7 @@ public class Employee {
         this.email = emailAddress;
     }
 
-    public String getAddress() {
-        return this.email.getAddress();
+    public Email getAddress() {
+        return this.email;
     }
 }
